@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsGlue">
+<head>
+  <title>EventsGl&uuml; - Venue Detail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">
+  <link rel="stylesheet" href="public/styles/styles.css">
+  <link rel="shortcut icon" href="favicon.ico"> 
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <script src="public/js/main.js"></script>
+  <link rel="stylesheet" href="public/styles/hint.css">
+
+  <!-- Add fancyBox main JS and CSS files -->
+  <script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+  <link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+  <!-- Add Thumbnail helper (this is optional) -->
+  <link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+  <script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.fancybox').fancybox();
+      /*
+       *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+       */
+      $('.fancybox-thumbs').fancybox({
+        prevEffect : 'none',
+        nextEffect : 'none',
+
+        closeBtn  : false,
+        arrows    : false,
+        nextClick : true,
+
+        helpers : {
+          thumbs : {
+            width  : 50,
+            height : 50
+          }
+        }
+      });
+    });
+  </script>
+
+
+
+
+</head>
+<body class="venues-page">
+  <header id="header" class="rainbow">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h1 class="logo"><a href="index.html">EventsGlue</a></h1>
+          <ul class="header-top-links list-unstyled hide-s hide-xs">
+            <li><a href="">Sign In</a></li>
+            <li><a href="" class="eg-btn eg-btn-1">Register</a></li>
+          </ul>
+          <span class="trigger-mm show-s show-xs" data-toggle="collapse" data-target="#mobile-menu"><span></span></span>
+          <div id="search" class="hide-xs">
+            <form action="">
+              <input type="text" placeholder="Search for vendors">
+              <button><span class="glyphicon glyphicon-search"></span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav id="main-menu" class="hide-s hide-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="venues.html">Venues</a></li>
+            <li class="active"><a href="djs.html">DJ's</a></li>
+            <li class="hint--right" data-hint="Coming Soon!"><a href="">Bands</a></li>
+            <li class="hint--right" data-hint="Coming Soon!"><a title="Coming Soon!" ="">Limos / event Buses</a></li>
+            <li class="hint--right" data-hint="Coming Soon!"><a title="Coming Soon!" href="">Photographers</a></li>
+            <li class="hint--left" data-hint="Coming Soon!"><a title="Coming Soon!" href="">event Packages</a></li>
+            <li class="hint--left" data-hint="Coming Soon!"><a title="Coming Soon!" href="">More</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav id="mobile-menu" class="collapse">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="list-unstyled">
+            <li class="search hide-s show-xs">
+              <form action="">
+                <input type="text" placeholder="Search for vendors">
+                <button></button>
+              </form>
+            </li>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="venues.html">Venues</a></li>
+            <li><a href="djs.html">DJ's</a></li>
+            <li><a href="">Bands</a></li>
+            <li><a href="">Limos / Party Buses</a></li>
+            <li><a href="">Photographers</a></li>
+            <li><a href="">Party Packages</a></li>
+            <li><a href="">More</a></li>
+            <li class="links">
+              <a href="">Sign In</a>
+              <a href="" class="eg-btn eg-btn-1">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section id="breadcrumbs" class="top-line">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ol class="breadcrumb">
+            <li class="home"><a href="#">Home</a></li>
+            <li><a href="#">Venues</a></li>
+            <li><a href="#">Sub Category</a></li>
+            <li class="active">Data</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="venue-detail">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+          <div id="detail">
+            <div class="venue-ttl">
+              <h2>Universal Sounds</h2>
+              <span><i class="glyphicon glyphicon-map-marker"></i> New York, NY</span>
+              <div class="price-box show-s">
+                from only
+                <span><sup>$</sup>79 <span>/person</span></span>
+              </div>
+              <div class="ribbon right new"><span>New</span></div>
+            </div>
+            <div class="image-gallery" image-gallery>
+              <div class="image-wrapper">
+                <img src="" alt="" class="big-image">
+                <div class="caption"></div>
+              </div>
+              <div id="image-gallery" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="public/images/djwed.png" alt="This is the caption 1">
+                    <img src="public/images/gallery-2.jpg" alt="This is the caption 2">
+                    <img src="public/images/gallery-1.jpg" alt="This is the caption 3">
+                    <img src="public/images/gallery-2.jpg" alt="This is the caption 4">
+                    <img src="public/images/gallery-1.jpg" alt="This is the caption 5">
+                    <img src="public/images/gallery-2.jpg" alt="This is the caption 6">
+                  </div>
+                  <div class="item">
+                    <img src="public/images/gallery-1.jpg" alt="This is the caption 7">
+                    <img src="public/images/gallery-2.jpg" alt="This is the caption 8">
+                    <img src="public/images/gallery-1.jpg" alt="This is the caption 9">
+                    <img src="public/images/gallery-2.jpg" alt="This is the caption 10">
+                    <img src="public/images/gallery-1.jpg" alt="This is the caption 11">
+                    <img src="public/images/gallery-2.jpg" alt="This is the caption 12">
+                  </div>
+                  <div class="item">
+                    <img src="public/images/gallery-1.jpg" alt="This is the caption 13">
+                    <img src="public/images/gallery-2.jpg" alt="This is the caption 14">
+                    <img src="public/images/gallery-1.jpg" alt="This is the caption 15">
+                    <img src="public/images/gallery-2.jpg" alt="This is the caption 16">
+                    <img src="public/images/gallery-1.jpg" alt="This is the caption 17">
+                    <img src="public/images/gallery-2.jpg" alt="This is the caption 18">
+                  </div>
+                </div>
+                <a class="control-left" href="#image-gallery" data-slide="prev">Previous</a>
+                <a class="control-right" href="#image-gallery" data-slide="next">Next</a>
+              </div>
+            </div>
+            <div class="price-box show-xs">
+              <a onclick="location.href='customize-dj.html'" href="" class="eg-btn eg-btn-2">Book</a>
+              from only
+              <span><sup>$</sup>79 <span>/person</span></span>
+            </div>
+            <div class="overview">
+              <h4>Overview</h4>
+              <p>From weddings to bar mitzvahs. From corporate events to sweet sixteens.  You name it.  We can do it.  With over 9 years experience in the event planning and entertainment industry, we can help you from the initial planning all the way through your special event.  Our services include state of the art sound equipment, mesmerizing laser and light shows, enormous plasma TVs with real-time photography, photo montages, dry ice "dancing on a cloud" effects, photo booths and more.  Just give us a call and see what we can do for you.</p>
+            </div>
+            <div class="room-types">
+              <h4>Packages</h4>
+              <div class="room">
+                  <a class="fancybox-thumbs" data-fancybox-group="thumb" href="public/images/room-b.png"><img src="public/images/room-s.png" alt=""/></a>
+                  <a id="hidden" class="fancybox-thumbs" data-fancybox-group="thumb" href="public/images/dj1.png"></a>
+                  <a id="hidden" class="fancybox-thumbs" data-fancybox-group="thumb" href="public/images/djwed.png"></a>
+                <div>
+                  <h5>Basic Package</h5>
+                  <div class="meta-data">
+                    <span class="seated">200</span>
+                    <span class="standing">100</span>
+                  </div>
+                  <h6>Includes</h6>
+                  <ul class="list-unstyled">
+                    <li>300 sqft of party space</li>
+                    <li>Large LED lit dome</li>
+                    <li>Floor to ceiling windows</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room">
+                  <a class="fancybox-thumbs" data-fancybox-group="thumb" href="public/images/room-b.png"><img src="public/images/room-s.png" alt=""/></a>
+                  <a id="hidden" class="fancybox-thumbs" data-fancybox-group="thumb" href="public/images/room-b.png"></a>
+                  <a id="hidden" class="fancybox-thumbs" data-fancybox-group="thumb" href="public/images/djwed.png"></a>
+                <div>
+                  <h5>Premium package</h5>
+                  <div class="meta-data">
+                    <span class="seated">200</span>
+                    <span class="standing">100</span>
+                  </div>
+                  <h6>Includes</h6>
+                  <ul class="list-unstyled">
+                    <li>300 sqft of party space</li>
+                    <li>Large LED lit dome</li>
+                    <li>Floor to ceiling windows</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="location">
+              <h4>Location</h4>
+              <img src="public/images/detail-map.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <aside id="detail-sidebar">
+            <div class="widget">
+              <div class="widget-price clearfix wg-element">
+                <span class="from">From Only</span>
+                <span class="price"><sup>$</sup>79 <span>/person</span></span>
+              </div>
+              <div class="small-row clearfix">
+                <div class="small-col">
+                  <div class="clearfix wg-element">
+                    <h6>When is your party?</h6>
+                    <div class="clearfix" ui-calendar>
+                      <input class="cal" type="text" placeholder="dd/mm/yyyy">
+                      <span class="calendar-trigger"></span>
+                    </div>
+                  </div>
+                  <div class="clearfix wg-element">
+                    <h6>What time is your party?</h6>
+                    <div class="select-wrapper time">
+                      <select>
+                        <option value="">12:30</option>
+                      </select>
+                    </div>
+                    <div class="select-wrapper type">
+                      <select>
+                        <option value="">AM</option>
+                        <option value="">PM</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="clearfix wg-element">
+                    <h6>How long is your party?</h6>
+                    <div class="ui-slider-wrapper" units="Hours" val="2" range="min" min="1" max="5" ui-slider>
+                      <div class="ui-slider"></div>
+                      <span class="text"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-col">
+                  <div class="clearfix wg-element">
+                    <h6>How many guests?</h6>
+                    <div class="ui-slider-wrapper" units="People" val="100" range="min" min="1" max="200" ui-slider>
+                      <div class="ui-slider"></div>
+                      <span class="text"></span>
+                    </div>
+                  </div>
+                  <div class="clearfix wg-element">
+                    <h6>Package</h6>
+                    <div class="type">
+                      <ul class="list-unstyled">
+                        <li>
+                          <div class="styled-input">
+                            <input type="radio" name="radio1" checked="checked" id="rd1">
+                            <label for="rd1"></label>
+                          </div>
+                          Basic Package
+                          <span>$59/pp</span>
+                        </li>
+                        <li>
+                          <div class="styled-input">
+                            <input type="radio" name="radio1" id="rd2">
+                            <label for="rd2"></label>
+                          </div>
+                          Premium package
+                          <span>$69/pp</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix wg-element">
+                <div class="grand-total clearfix">
+                  <span>Grand Total</span>
+                  <span>$11,800</span>
+                </div>
+                <a onclick="location.href='customize-dj.html'" href="" class="eg-btn eg-btn-2">Book Now</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="container rainbow-smaller">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div id="footer-top">
+            <div class="footer-top_text">
+              <h1 class="logo"><a href="index.html">EventsGlue</a></h1>
+              <p>Events Glu lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere eu dui sodales ullamcorper. Suspendisse potenti. Aliquam dictum viverra felis hendrerit efficitur</p>
+            </div>
+            <div class="footer-top_link hide-xs">
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About Party Up</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About Party Up</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About Party Up</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About Party Up</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="footer-bottom">
+            <div class="footer-bottom_subscribe">
+              <h4>Get the Latest news &amp; production updates</h4>
+              <div>
+                <input type="text" placeholder="Enter you email address">
+                <button class="eg-btn eg-btn-1">Subscribe</button>
+              </div>
+            </div>
+            <div class="footer-bottom_social hide-xs">
+              <h4>we are social</h4>
+              <ul class="list-unstyled social">
+                <li><a href="">Facebook</a></li>
+                <li><a href="">Twitter</a></li>
+                <li><a href="">Vimeo</a></li>
+                <li><a href="">Youtube</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="footer-info">
+            <p>&copy; 2014 Event Glu, Inc. All Rights Reserved.</p>
+            <ul class="list-unstyled">
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

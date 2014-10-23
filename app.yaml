@@ -1,0 +1,24 @@
+application: eventglu
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+  mime_type: image
+
+- url: /public
+  static_dir: public
+
+- url: /bower_components
+  static_dir: bower_components
+
+- url: /.*
+  script: index.application
+
+libraries:
+- name: jinja2
+  version: latest

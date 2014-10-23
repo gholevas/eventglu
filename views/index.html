@@ -1,0 +1,1228 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsGlue">
+<head>
+  <title>EventsGl&uuml;</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../public/bower_components/jquery-ui/themes/base/all.css">
+  <link rel="stylesheet" href="../public/styles/styles.css">
+  <link rel="shortcut icon" href="favicon.ico"> 
+  <link rel="stylesheet" href="../public/styles/hint.css">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55492717-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+
+<body class="home-page">
+  <a class="various fancybox.iframe" rel="group" href="https://www.youtube.com/embed/9qjQgVwm5iY?autoplay=1" id="how-it-works-link" class="hide-s hide-xs">HOW IT WORKS</a>
+
+
+  <header id="header" class="rainbow">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h1 class="logo"><a href="/">EventsGlue</a></h1>
+          <ul class="header-top-links list-unstyled hide-s hide-xs">
+            <li><a href="">Sign In</a></li>
+            <li><a href="edit/venues" class="eg-btn eg-btn-1">Edit Venues</a></li>
+          </ul>
+          <span class="trigger-mm show-s show-xs" data-toggle="collapse" data-target="#mobile-menu"><span></span></span>
+          <div id="search" class="hide-xs">
+            <form action="">
+              <input type="text" placeholder="Search for vendors">
+              <button><span class="glyphicon glyphicon-search"></span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav id="main-menu" class="hide-s hide-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="list-unstyled">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="venues">Venues</a></li>
+            <li><a href="">DJ's</a></li>
+            <li class="hint--right" data-hint="Coming Soon!"><a>Bands</a></li>
+            <li class="hint--right" data-hint="Coming Soon!"><a>Limos / event Buses</a></li>
+            <li class="hint--right" data-hint="Coming Soon!"><a>Photographers</a></li>
+            <li class="hint--left" data-hint="Coming Soon!"><a>event Packages</a></li>
+            <li class="hint--left" data-hint="Coming Soon!"><a>More</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav id="mobile-menu" class="collapse">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="list-unstyled">
+            <li class="search hide-s show-xs">
+              <form action="">
+                <input type="text" placeholder="Search for vendors">
+                <button></button>
+              </form>
+            </li>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="venues">Venues</a></li>
+            <li><a href="djs.html">DJ's</a></li>
+            <li><a class="disabled"  href="">Bands (Soon)</a></li>
+            <li><a class="disabled"  href="">Limos / event Buses (Soon)</a></li>
+            <li><a class="disabled"  href="">Photographers (Soon)</a></li>
+            <li><a class="disabled"  href="">event Packages (Soon)</a></li>
+            <li><a class="disabled"  href="">More (Soon)</a></li>
+            <li class="links">
+              <a href="">Sign In</a>
+              <a href="" class="eg-btn eg-btn-1">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section id="categories-search">
+    <div class="bgs" swap-bgs>
+      <div class="bg bg1 show"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div id="categories-search-tabs" enable-swap>
+            <ul class="list-unstyled hide-xs" role="tablist">
+              <li class="active"><a href="#tab-1" role="tab" data-toggle="tab" data-index="1"><span><i></i></span>Venues</a></li>
+              <li><a href="#tab-2" role="tab" data-toggle="tab" data-index="2"><span><i></i></span>DJ's</a></li>
+              <li><a><span><i></i></span><span class="extra">Coming Soon!</span>Bands</a></li>
+              <li><a><span><i></i></span><span class="extra">Coming Soon!</span>Transfers</a></li>
+              <li><a><span><i></i></span><span class="extra">Coming Soon!</span>Packages</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active pane-1" id="tab-1" data-index="1">
+                <form action="">
+                  <div class="tab-ttl show-xs">
+                    <span><i></i></span>Venues
+                  </div>
+                  <div class="form-set clearfix">
+                    <label for="">Where is your event?</label>
+                    <input type="text" placeholder="City, State or Zip Code">
+                  </div>
+                  <div class="form-set clearfix">
+                    <div>
+                      <label for="">When is your event?</label>
+                      <div class="calendar clearfix" ui-calendar>
+                        <input class="cal" type="text" placeholder="dd/mm/yyyy">
+                        <span class="calendar-trigger"></span>
+                      </div>
+                      <div class="ui-slider-wrapper" units="People" val="100" range="min" min="1" max="400" ui-slider>
+                        <label for="">How many guests?</label>
+                        <span class="text"></span>
+                        <div class="ui-slider"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="">What time is your event?</label>
+                      <div class="clearfix">
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="">12:30</option>
+                          </select>
+                        </div>
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="">AM</option>
+                            <option value="">PM</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="ui-slider-wrapper" units="Hours" val="4" range="min" min="1" max="12" ui-slider>
+                        <label for="">How long is your event?</label>
+                        <span class="text"></span>
+                        <div class="ui-slider"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button onclick="location.href='venues'" class="eg-btn eg-btn-1">Search Venues</button>
+                </form>
+              </div>
+              <div class="tab-pane pane-2" id="tab-2" data-index="2">
+                <form action="">
+                  <div class="tab-ttl show-xs">
+                    <span><i></i></span>DJ's
+                  </div>
+                  <div class="form-set clearfix">
+                    <label for="">Where is your event?</label>
+                    <input type="text" placeholder="Search for City, State or Zip Code">
+                  </div>
+                  <div class="form-set clearfix">
+                    <div>
+                      <label for="">When is your event?</label>
+                      <div class="calendar clearfix" ui-calendar>
+                        <input class="cal" type="text" placeholder="dd/mm/yyyy">
+                        <span class="calendar-trigger"></span>
+                      </div>
+                      <div class="ui-slider-wrapper" units="People" val="100" range="min" min="1" max="400" ui-slider>
+                        <label for="">How many guests?</label>
+                        <span class="text"></span>
+                        <div class="ui-slider"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="">What time is your event?</label>
+                      <div class="clearfix">
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="">12:30</option>
+                          </select>
+                        </div>
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="">AM</option>
+                            <option value="">PM</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="ui-slider-wrapper" units="Hours" val="4" range="min" min="1" max="12" ui-slider>
+                        <label for="">How long is your event?</label>
+                        <span class="text"></span>
+                        <div class="ui-slider"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button onclick="location.href='djs.html'" class="eg-btn eg-btn-1">Search DJ's</button>
+                </form>
+              </div>
+              <div class="tab-pane pane-3" id="tab-3" data-index="3">
+                <form action="">
+                  <div class="tab-ttl show-xs">
+                    <span><i></i></span>Bands
+                  </div>
+                  <div class="form-set clearfix">
+                    <label for="">Where is your event?</label>
+                    <input type="text" placeholder="Search for City, State or Zip Code">
+                  </div>
+                  <div class="form-set clearfix">
+                    <div>
+                      <label for="">When is your event?</label>
+                      <div class="calendar clearfix" ui-calendar>
+                        <input class="cal" type="text" placeholder="dd/mm/yyyy">
+                        <span class="calendar-trigger"></span>
+                      </div>
+                      <div class="ui-slider-wrapper" units="People" val="100" range="min" min="1" max="400" ui-slider>
+                        <label for="">How many guests?</label>
+                        <span class="text"></span>
+                        <div class="ui-slider"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="">What time is your event?</label>
+                      <div class="clearfix">
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="">12:30</option>
+                          </select>
+                        </div>
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="">AM</option>
+                            <option value="">PM</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="ui-slider-wrapper" units="Hours" val="4" range="min" min="1" max="12" ui-slider>
+                        <label for="">How long is your event?</label>
+                        <span class="text"></span>
+                        <div class="ui-slider"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="eg-btn eg-btn-1">Search Bands</button>
+                </form>
+              </div>
+              <div class="tab-pane pane-4" id="tab-4" data-index="4">
+                <form action="">
+                  <div class="tab-ttl show-xs">
+                    <span><i></i></span>Transfers
+                  </div>
+                  <div class="form-set clearfix">
+                    <label for="">Where is your event?</label>
+                    <input type="text" placeholder="Search for City, State or Zip Code">
+                  </div>
+                  <div class="form-set clearfix">
+                    <div>
+                      <label for="">When is your event?</label>
+                      <div class="calendar clearfix" ui-calendar>
+                        <input class="cal" type="text" placeholder="dd/mm/yyyy">
+                        <span class="calendar-trigger"></span>
+                      </div>
+                      <div class="ui-slider-wrapper" units="People" val="100" range="min" min="1" max="400" ui-slider>
+                        <label for="">How many guests?</label>
+                        <span class="text"></span>
+                        <div class="ui-slider"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="">What time is your event?</label>
+                      <div class="clearfix">
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="">12:30</option>
+                          </select>
+                        </div>
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="">AM</option>
+                            <option value="">PM</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="ui-slider-wrapper" units="Hours" val="4" range="min" min="1" max="12" ui-slider>
+                        <label for="">How long is your event?</label>
+                        <span class="text"></span>
+                        <div class="ui-slider"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="eg-btn eg-btn-1">Search Transfers</button>
+                </form>
+              </div>
+              <div class="tab-pane pane-5" id="tab-5" data-index="5">
+                <form action="">
+                  <div class="tab-ttl show-xs">
+                    <span><i></i></span>Packages
+                  </div>
+                  <div class="form-set clearfix">
+                    <label for="">Where is your event?</label>
+                    <input type="text" placeholder="Search for City, State or Zip Code">
+                  </div>
+                  <div class="form-set clearfix">
+                    <div>
+                      <label for="">When is your event?</label>
+                      <div class="calendar clearfix" ui-calendar>
+                        <input class="cal" type="text" placeholder="dd/mm/yyyy">
+                        <span class="calendar-trigger"></span>
+                      </div>
+                      <div class="ui-slider-wrapper" units="People" val="100" range="min" min="1" max="400" ui-slider>
+                        <label for="">How many guests?</label>
+                        <span class="text"></span>
+                        <div class="ui-slider"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="">What time is your event?</label>
+                      <div class="clearfix">
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="">12:30</option>
+                          </select>
+                        </div>
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="">AM</option>
+                            <option value="">PM</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="ui-slider-wrapper" units="Hours" val="4" range="min" min="1" max="12" ui-slider>
+                        <label for="">How long is your event?</label>
+                        <span class="text"></span>
+                        <div class="ui-slider"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="eg-btn eg-btn-1">Search Packages</button>
+                </form>
+              </div>
+            </div>
+<!--             <ul class="list-unstyled small-tabs show-xs" role="tablist">
+              <li class="active"><a href="#tab-1" role="tab" data-toggle="tab" data-index="1">Venues</a></li>
+              <li><a href="#tab-2" role="tab" data-toggle="tab" data-index="2">DJ's</a></li>
+              <li><a href="#tab-3" role="tab" data-toggle="tab" data-index="3">Bands</a></li>
+              <li><a href="#tab-4" role="tab" data-toggle="tab" data-index="4">Transfers</a></li>
+              <li><a href="#tab-5" role="tab" data-toggle="tab" data-index="5">Packages</a></li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="featured">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div id="featured-carousel" class="featured-carousel carousel slide bordered hide-s hide-xs" data-ride="carousel">
+            <div class="shadow"></div>
+            <div class="carousel-inner">
+              <div class="item active">
+                <ul class="list-unstyled">
+                   <li class="tile">
+                   <img src="../public/images/venue1.png" alt="" pagespeed_url_hash="3700058393">
+                   <h4>Central Lounge</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> East Village, NY</span>
+                   <p title="Delivering superior customer service, offering exceptional pricing and delivering great value, Central Special Events features three unique and versatile private ...">
+                      Delivering superior customer service, offering exceptional pricing and deliv...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   <div class="ribbon new">
+                      <span>New</span>
+                   </div>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue2.png" alt="" pagespeed_url_hash="3994558314">
+                   <h4>Chateaubriand</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Meatpacking, NY</span>
+                   <p title="Renowned Long Island caterers Chateau Briand invites you to experience a truly unique setting for a wide array of events including weddings, birthday parties, family reunions and corporate retreats. Experience the remarkable lobby that boasts twin fireplaces, a baby grand piano, and a picturesque 42-foot staircase.">
+                      Renowned Long Island caterers Chateau Briand invites you to experience a tru...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   <div class="ribbon discount">
+                      <span>50%</span>
+                   </div>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue3.png" alt="" pagespeed_url_hash="4289058235">
+                   <h4>La Marina</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Bronx, NY</span>
+                   <p title="With stunning river views, dining at La Marina is an 'out of city' experience. Taste fresh-shucked oysters from 'Geppetto', the classic raw-bar boat, sample our famous Chicken Lollipops, crack open a fresh grilled lobster, or dig into a steak with a side of shisito peppers, both charred to perfection.">
+                      With stunning river views, dining at La Marina is an out of city experience...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$42 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue4.png" alt="" pagespeed_url_hash="288590860">
+                   <h4>Greenhouse</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Flushing, NY</span>
+                   <p title="Huge, trendy nightclub with DJs & dancing in a high-design space built with eco-friendly materials.">
+                      Huge, trendy nightclub with DJs & dancing in a high-design space built wit...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$55 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   </li>
+                </ul>
+             </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                   <li class="tile">
+                   <img src="../public/images/venue1.png" alt="" pagespeed_url_hash="3700058393">
+                   <h4>Central Lounge</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> East Village, NY</span>
+                   <p title="Delivering superior customer service, offering exceptional pricing and delivering great value, Central Special Events features three unique and versatile private ...">
+                      Delivering superior customer service, offering exceptional pricing and deliv...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   <div class="ribbon new">
+                      <span>New</span>
+                   </div>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue2.png" alt="" pagespeed_url_hash="3994558314">
+                   <h4>Chateaubriand</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Meatpacking, NY</span>
+                   <p title="Renowned Long Island caterers Chateau Briand invites you to experience a truly unique setting for a wide array of events including weddings, birthday parties, family reunions and corporate retreats. Experience the remarkable lobby that boasts twin fireplaces, a baby grand piano, and a picturesque 42-foot staircase.">
+                      Renowned Long Island caterers Chateau Briand invites you to experience a tru...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   <div class="ribbon discount">
+                      <span>50%</span>
+                   </div>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue3.png" alt="" pagespeed_url_hash="4289058235">
+                   <h4>La Marina</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Bronx, NY</span>
+                   <p title="With stunning river views, dining at La Marina is an 'out of city' experience. Taste fresh-shucked oysters from 'Geppetto', the classic raw-bar boat, sample our famous Chicken Lollipops, crack open a fresh grilled lobster, or dig into a steak with a side of shisito peppers, both charred to perfection.">
+                      With stunning river views, dining at La Marina is an out of city experience...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$42 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue4.png" alt="" pagespeed_url_hash="288590860">
+                   <h4>Greenhouse</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Flushing, NY</span>
+                   <p title="Huge, trendy nightclub with DJs & dancing in a high-design space built with eco-friendly materials.">
+                      Huge, trendy nightclub with DJs & dancing in a high-design space built wit...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$55 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   </li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                   <li class="tile">
+                   <img src="../public/images/venue1.png" alt="" pagespeed_url_hash="3700058393">
+                   <h4>Central Lounge</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> East Village, NY</span>
+                   <p title="Delivering superior customer service, offering exceptional pricing and delivering great value, Central Special Events features three unique and versatile private ...">
+                      Delivering superior customer service, offering exceptional pricing and deliv...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   <div class="ribbon new">
+                      <span>New</span>
+                   </div>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue2.png" alt="" pagespeed_url_hash="3994558314">
+                   <h4>Chateaubriand</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Meatpacking, NY</span>
+                   <p title="Renowned Long Island caterers Chateau Briand invites you to experience a truly unique setting for a wide array of events including weddings, birthday parties, family reunions and corporate retreats. Experience the remarkable lobby that boasts twin fireplaces, a baby grand piano, and a picturesque 42-foot staircase.">
+                      Renowned Long Island caterers Chateau Briand invites you to experience a tru...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   <div class="ribbon discount">
+                      <span>50%</span>
+                   </div>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue3.png" alt="" pagespeed_url_hash="4289058235">
+                   <h4>La Marina</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Bronx, NY</span>
+                   <p title="With stunning river views, dining at La Marina is an 'out of city' experience. Taste fresh-shucked oysters from 'Geppetto', the classic raw-bar boat, sample our famous Chicken Lollipops, crack open a fresh grilled lobster, or dig into a steak with a side of shisito peppers, both charred to perfection.">
+                      With stunning river views, dining at La Marina is an out of city experience...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$42 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue4.png" alt="" pagespeed_url_hash="288590860">
+                   <h4>Greenhouse</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Flushing, NY</span>
+                   <p title="Huge, trendy nightclub with DJs & dancing in a high-design space built with eco-friendly materials.">
+                      Huge, trendy nightclub with DJs & dancing in a high-design space built wit...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$55 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   </li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                   <li class="tile">
+                   <img src="../public/images/venue1.png" alt="" pagespeed_url_hash="3700058393">
+                   <h4>Central Lounge</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> East Village, NY</span>
+                   <p title="Delivering superior customer service, offering exceptional pricing and delivering great value, Central Special Events features three unique and versatile private ...">
+                      Delivering superior customer service, offering exceptional pricing and deliv...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   <div class="ribbon new">
+                      <span>New</span>
+                   </div>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue2.png" alt="" pagespeed_url_hash="3994558314">
+                   <h4>Chateaubriand</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Meatpacking, NY</span>
+                   <p title="Renowned Long Island caterers Chateau Briand invites you to experience a truly unique setting for a wide array of events including weddings, birthday parties, family reunions and corporate retreats. Experience the remarkable lobby that boasts twin fireplaces, a baby grand piano, and a picturesque 42-foot staircase.">
+                      Renowned Long Island caterers Chateau Briand invites you to experience a tru...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   <div class="ribbon discount">
+                      <span>50%</span>
+                   </div>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue3.png" alt="" pagespeed_url_hash="4289058235">
+                   <h4>La Marina</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Bronx, NY</span>
+                   <p title="With stunning river views, dining at La Marina is an 'out of city' experience. Taste fresh-shucked oysters from 'Geppetto', the classic raw-bar boat, sample our famous Chicken Lollipops, crack open a fresh grilled lobster, or dig into a steak with a side of shisito peppers, both charred to perfection.">
+                      With stunning river views, dining at La Marina is an out of city experience...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$42 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   </li>
+                   <li class="tile">
+                   <img src="../public/images/venue4.png" alt="" pagespeed_url_hash="288590860">
+                   <h4>Greenhouse</h4>
+                   <span><i class="glyphicon glyphicon-map-marker"></i> Flushing, NY</span>
+                   <p title="Huge, trendy nightclub with DJs & dancing in a high-design space built with eco-friendly materials.">
+                      Huge, trendy nightclub with DJs & dancing in a high-design space built wit...
+                   </p>
+                   <div class="meta-data">
+                      <span class="price">$55 <span>/person</span></span>
+                   </div>
+                   <a href="venue-detail.html" class="eg-btn eg-btn-1">Book Now</a>
+                   </li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon new"><span>New</span></div>
+                  </li>
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon discount"><span>50%</span></div>
+                  </li>
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                  </li>
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <ol class="carousel-indicators">
+              <li data-target="#featured-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#featured-carousel" data-slide-to="1"></li>
+              <li data-target="#featured-carousel" data-slide-to="2"></li>
+              <li data-target="#featured-carousel" data-slide-to="3"></li>
+              <li data-target="#featured-carousel" data-slide-to="4"></li>
+            </ol>
+          </div>
+          <div id="featured-carousel-small" class="featured-carousel carousel slide bordered show-s" data-ride="carousel" data-interval="false">
+            <div class="shadow"></div>
+            <div class="carousel-inner">
+              <div class="item active">
+                <ul class="list-unstyled">
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon new"><span>New</span></div>
+                  </li>
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon discount"><span>50%</span></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon new"><span>New</span></div>
+                  </li>
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon discount"><span>50%</span></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon new"><span>New</span></div>
+                  </li>
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon discount"><span>50%</span></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon new"><span>New</span></div>
+                  </li>
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon discount"><span>50%</span></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon new"><span>New</span></div>
+                  </li>
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon discount"><span>50%</span></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <ol class="carousel-indicators">
+              <li data-target="#featured-carousel-small" data-slide-to="0" class="active"></li>
+              <li data-target="#featured-carousel-small" data-slide-to="1"></li>
+              <li data-target="#featured-carousel-small" data-slide-to="2"></li>
+              <li data-target="#featured-carousel-small" data-slide-to="3"></li>
+              <li data-target="#featured-carousel-small" data-slide-to="4"></li>
+            </ol>
+          </div>
+
+
+<!--           <div id="featured-carousel-xs" class="featured-carousel carousel slide bordered show-xs" data-ride="carousel" data-interval="false">
+            <div class="shadow"></div>
+            <div class="carousel-inner">
+              <div class="item active">
+                <ul class="list-unstyled">
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon new"><span>New</span></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price">$59 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon new"><span>New</span></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon discount"><span>50%</span></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon discount"><span>50%</span></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul class="list-unstyled">
+                  <li class="tile">
+                    <img src="../public/images/featured.png" alt="">
+                    <h4>Quisque rhoncus lectus at augue</h4>
+                    <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                    <div class="meta-data">
+                      <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                    </div>
+                    <a href="" class="eg-btn eg-btn-1">Book Now</a>
+                    <div class="ribbon discount"><span>50%</span></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <ol class="carousel-indicators">
+              <li data-target="#featured-carousel-xs" data-slide-to="0" class="active"></li>
+              <li data-target="#featured-carousel-xs" data-slide-to="1"></li>
+              <li data-target="#featured-carousel-xs" data-slide-to="2"></li>
+              <li data-target="#featured-carousel-xs" data-slide-to="3"></li>
+              <li data-target="#featured-carousel-xs" data-slide-to="4"></li>
+            </ol>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+<!--   <section id="flash-deals">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="title">
+            <h3 class="tag">flash deals</h3>
+            <a href="" class="link-1">View All</a>
+          </div>
+          <div id="deals-wrapper" class="bordered">
+            <div id="flash-carousel" class="flash-carousel carousel slide show-xs" data-ride="carousel" data-interval="false">
+              <div class="carousel-inner clearfix">
+                <div class="item active">
+                  <ul class="list-unstyled clearfix">
+                    <li class="tile">
+                      <img src="../public/images/featured.png" alt="">
+                      <div class="text-wrapper">
+                        <h4>Quisque rhoncus lectus at augue</h4>
+                        <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                      </div>
+                      <div class="meta-data">
+                        <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                      </div>
+                      <div class="ribbon discount"><span>50%</span></div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="item">
+                  <ul class="list-unstyled clearfix">
+                    <li class="tile">
+                      <img src="../public/images/featured.png" alt="">
+                      <div class="text-wrapper">
+                        <h4>Quisque rhoncus lectus at augue</h4>
+                        <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                      </div>
+                      <div class="meta-data">
+                        <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                      </div>
+                      <div class="ribbon discount"><span>50%</span></div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="item">
+                  <ul class="list-unstyled clearfix">
+                    <li class="tile">
+                      <img src="../public/images/featured.png" alt="">
+                      <div class="text-wrapper">
+                        <h4>Quisque rhoncus lectus at augue</h4>
+                        <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                      </div>
+                      <div class="meta-data">
+                        <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                      </div>
+                      <div class="ribbon discount"><span>50%</span></div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="item">
+                  <ul class="list-unstyled clearfix">
+                    <li class="tile">
+                      <img src="../public/images/featured.png" alt="">
+                      <div class="text-wrapper">
+                        <h4>Quisque rhoncus lectus at augue</h4>
+                        <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                      </div>
+                      <div class="meta-data">
+                        <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                      </div>
+                      <div class="ribbon discount"><span>50%</span></div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="item">
+                  <ul class="list-unstyled clearfix">
+                    <li class="tile">
+                      <img src="../public/images/featured.png" alt="">
+                      <div class="text-wrapper">
+                        <h4>Quisque rhoncus lectus at augue</h4>
+                        <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                      </div>
+                      <div class="meta-data">
+                        <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                      </div>
+                      <div class="ribbon discount"><span>50%</span></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <ol class="carousel-indicators">
+                <li data-target="#flash-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#flash-carousel" data-slide-to="1"></li>
+                <li data-target="#flash-carousel" data-slide-to="2"></li>
+                <li data-target="#flash-carousel" data-slide-to="3"></li>
+                <li data-target="#flash-carousel" data-slide-to="4"></li>
+              </ol>
+            </div>
+            
+            <ul class="list-unstyled clearfix hide-xs">
+              <li class="tile">
+                <img src="../public/images/featured.png" alt="">
+                <div class="text-wrapper">
+                  <h4>Quisque rhoncus lectus at augue</h4>
+                  <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                </div>
+                <div class="meta-data">
+                  <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                </div>
+                <div class="ribbon discount"><span>50%</span></div>
+              </li>
+              <li class="tile">
+                <img src="../public/images/featured.png" alt="">
+                <div class="text-wrapper">
+                  <h4>Quisque rhoncus lectus at augue</h4>
+                  <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                </div>
+                <div class="meta-data">
+                  <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                </div>
+                <div class="ribbon discount"><span>50%</span></div>
+              </li>
+              <li class="tile">
+                <img src="../public/images/featured.png" alt="">
+                <div class="text-wrapper">
+                  <h4>Quisque rhoncus lectus at augue</h4>
+                  <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                </div>
+                <div class="meta-data">
+                  <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                </div>
+                <div class="ribbon discount"><span>50%</span></div>
+              </li>
+              <li class="tile">
+                <img src="../public/images/featured.png" alt="">
+                <div class="text-wrapper">
+                  <h4>Quisque rhoncus lectus at augue</h4>
+                  <span><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit felis, varius.</p>
+                </div>
+                <div class="meta-data">
+                  <span class="price"><span class="discount">$56</span> $28 <span>/person</span></span>
+                </div>
+                <div class="ribbon discount"><span>50%</span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+<!--   <section id="popular-cities">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="title">
+            <h3 class="location">popular cities</h3>
+          </div>
+          <div id="cities-wrapper" class="clearfix">
+            <ul class="list-unstyled">
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+            </ul>
+            <ul class="list-unstyled">
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+            </ul>
+            <ul class="list-unstyled hide-xs">
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+            </ul>
+            <ul class="list-unstyled hide-xs">
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+            </ul>
+            <ul class="list-unstyled hide-s hide-xs">
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+            </ul>
+            <ul class="list-unstyled hide-s hide-xs">
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+              <li><a href="">Chicago</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <footer id="footer">
+    <div class="container rainbow-smaller">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div id="footer-top">
+            <div class="footer-top_text">
+              <h1 class="logo"><a href="/">EventsGlue</a></h1>
+              <p>Compare. Configure. Book.</p>
+            </div>
+            <div class="footer-top_link hide-xs">
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About EventsGl&uuml;</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About EventsGl&uuml;</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About EventsGl&uuml;</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About EventsGl&uuml;</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="footer-bottom">
+            <div class="footer-bottom_subscribe">
+              <h4>Get the Latest news &amp; production updates</h4>
+              <div>
+                <input type="text" placeholder="Enter you email address">
+                <button class="eg-btn eg-btn-1">Subscribe</button>
+              </div>
+            </div>
+            <div class="footer-bottom_social hide-xs">
+              <h4>we are social</h4>
+              <ul class="list-unstyled social">
+                <li><a href="">Facebook</a></li>
+                <li><a href="">Twitter</a></li>
+                <li><a href="">Vimeo</a></li>
+                <li><a href="">Youtube</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="footer-info">
+            <p>&copy; 2014 EventsGl&uuml;, Inc. All Rights Reserved.</p>
+            <ul class="list-unstyled">
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <script src="../public/js/main.js"></script>
+
+
+  <!-- Add fancyBox main JS and CSS files -->
+  <script type="text/javascript" src="../public/source/jquery.fancybox.js?v=2.1.5"></script>
+  <link rel="stylesheet" type="text/css" href="public/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+  <!-- Add Thumbnail helper (this is optional) -->
+  <link rel="stylesheet" type="text/css" href="../public/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+  <script type="text/javascript" src="../public/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+  <!-- Add fancyBox main JS and CSS files -->
+  <script type="text/javascript" src="../public/source/jquery.fancybox.js?v=2.1.5"></script>
+  <link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+  <!-- Add Thumbnail helper (this is optional) -->
+  <link rel="stylesheet" type="text/css" href="../public/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+  <script type="text/javascript" src="../public/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".various").fancybox({
+    maxWidth  : 800,
+    maxHeight : 600,
+    fitToView : false,
+    width   : '70%',
+    height    : '70%',
+    autoSize  : false,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
+});
+</script>
+
+
+
+ 
+</body>
+</html>

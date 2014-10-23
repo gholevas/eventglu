@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsGlue">
+<head>
+  <title>EventsGl&uuml; - Customize Event</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">
+  <link rel="stylesheet" href="public/styles/styles.css">
+  <link rel="shortcut icon" href="favicon.ico"> 
+  <link rel="stylesheet" href="public/styles/hint.css">
+
+</head>
+<body class="white">
+  <header id="header" class="rainbow">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h1 class="logo"><a href="index.html">EventsGlue</a></h1>
+          <ul class="header-top-links list-unstyled hide-s hide-xs">
+            <li><a href="">Sign In</a></li>
+            <li><a href="" class="eg-btn eg-btn-1">Register</a></li>
+          </ul>
+          <span class="trigger-mm show-s show-xs" data-toggle="collapse" data-target="#mobile-menu"><span></span></span>
+          <div id="search" class="hide-xs">
+            <form action="">
+              <input type="text" placeholder="Search for vendors">
+              <button><span class="glyphicon glyphicon-search"></span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav id="main-menu" class="hide-s hide-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="venues.html">Venues</a></li>
+            <li><a href="djs.html">DJ's</a></li>
+            <li class="hint--right" data-hint="Coming Soon!"><a href="">Bands</a></li>
+            <li class="hint--right" data-hint="Coming Soon!"><a title="Coming Soon!" ="">Limos / event Buses</a></li>
+            <li class="hint--right" data-hint="Coming Soon!"><a title="Coming Soon!" href="">Photographers</a></li>
+            <li class="hint--left" data-hint="Coming Soon!"><a title="Coming Soon!" href="">event Packages</a></li>
+            <li class="hint--left" data-hint="Coming Soon!"><a title="Coming Soon!" href="">More</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav id="mobile-menu" class="collapse">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="list-unstyled">
+            <li class="search hide-s show-xs">
+              <form action="">
+                <input type="text" placeholder="Search for vendors">
+                <button></button>
+              </form>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="venues.html">Venues</a></li>
+            <li><a href="djs.html">DJ's</a></li>
+            <li><a href="">Bands</a></li>
+            <li><a href="">Limos / Party Buses</a></li>
+            <li><a href="">Photographers</a></li>
+            <li><a href="">Party Packages</a></li>
+            <li><a href="">More</a></li>
+            <li class="links">
+              <a href="">Sign In</a>
+              <a href="" class="eg-btn eg-btn-1">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section id="event-title" class="top-line">
+    <div class="eveng-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h1>Universal Sounds</h1>
+            <p><i class="glyphicon glyphicon-map-marker"></i> San Francisco, CA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="customize-steps">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h3 class="hide-xs"><span class="number">1</span> customize event</h3>
+          <ul class="list-unstyled clearfix">
+            <li class="active">customize<span class="number">1</span></li>
+            <li>checkout<span class="number">2</span></li>
+            <li>confirmation<span class="number">3</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="customize-option">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+          <h4>Please enter your details below to complete your purchase</h4>
+          <div class="panel-group" id="options">
+            <div class="panel">
+              <a class="options-trigger" data-toggle="collapse" data-parent="#options" href="#collapseOne">SELECT A food option</a>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                <ul class="list-unstyled" check-item>
+                  <li>
+                    <div class="styled-input">
+                      <input type="radio" id="food-1" name="foods" checked="checked">
+                      <label for="food-1"></label>
+                    </div>
+                    <img src="public/images/option.jpg" alt="">
+                    <div class="option-info">
+                      <span>Buffet</span>
+                      <a href="" data-toggle="modal" data-target="#details-modal"><i class="glyphicon glyphicon-eye-open"></i> <span>See Details</span></a>
+                      <a href="" data-toggle="modal" data-target="#extras-modal"><i class="glyphicon glyphicon-star"></i> <span>Add Extras</span></a>
+                    </div>
+                    <span>Included</span>
+                  </li>
+                  <li>
+                    <div class="styled-input">
+                      <input type="radio" id="food-2" name="foods">
+                      <label for="food-2"></label>
+                    </div>
+                    <img src="public/images/option.jpg" alt="">
+                    <div class="option-info">
+                      <span>Buffet</span>
+                      <a href="" data-toggle="modal" data-target="#details-modal"><i class="glyphicon glyphicon-eye-open"></i> <span>See Details</span></a>
+                      <a href="" data-toggle="modal" data-target="#extras-modal"><i class="glyphicon glyphicon-star"></i> <span>Add Extras</span></a>
+                    </div>
+                    <span>Included</span>
+                  </li>
+                  <li>
+                    <div class="styled-input">
+                      <input type="radio" id="food-3" name="foods">
+                      <label for="food-3"></label>
+                    </div>
+                    <img src="public/images/option.jpg" alt="">
+                    <div class="option-info">
+                      <span>Buffet</span>
+                      <a href="" data-toggle="modal" data-target="#details-modal"><i class="glyphicon glyphicon-eye-open"></i> <span>See Details</span></a>
+                      <a href="" data-toggle="modal" data-target="#extras-modal"><i class="glyphicon glyphicon-star"></i> <span>Add Extras</span></a>
+                    </div>
+                    <span>Included</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="panel">
+              <a class="options-trigger collapsed" data-toggle="collapse" data-parent="#options" href="#collapseTwo">SELECT A DRINK option</a>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                <ul class="list-unstyled" check-item>
+                  <li>
+                    <div class="styled-input">
+                      <input type="radio" id="drinks-1" name="drinks" checked="checked">
+                      <label for="drinks-1"></label>
+                    </div>
+                    <img src="public/images/option.jpg" alt="">
+                    <div class="option-info">
+                      <span>Buffet</span>
+                      <a href="" data-toggle="modal" data-target="#details-modal"><i class="glyphicon glyphicon-eye-open"></i> <span>See Details</span></a>
+                      <a href="" data-toggle="modal" data-target="#extras-modal"><i class="glyphicon glyphicon-star"></i> <span>Add Extras</span></a>
+                    </div>
+                    <span>Included</span>
+                  </li>
+                  <li>
+                    <div class="styled-input">
+                      <input type="radio" id="drinks-2" name="drinks">
+                      <label for="drinks-2"></label>
+                    </div>
+                    <img src="public/images/option.jpg" alt="">
+                    <div class="option-info">
+                      <span>Buffet</span>
+                      <a href="" data-toggle="modal" data-target="#details-modal"><i class="glyphicon glyphicon-eye-open"></i> <span>See Details</span></a>
+                      <a href="" data-toggle="modal" data-target="#extras-modal"><i class="glyphicon glyphicon-star"></i> <span>Add Extras</span></a>
+                    </div>
+                    <span>Included</span>
+                  </li>
+                  <li>
+                    <div class="styled-input">
+                      <input type="radio" id="drinks-3" name="drinks">
+                      <label for="drinks-3"></label>
+                    </div>
+                    <img src="public/images/option.jpg" alt="">
+                    <div class="option-info">
+                      <span>Buffet</span>
+                      <a href="" data-toggle="modal" data-target="#details-modal"><i class="glyphicon glyphicon-eye-open"></i> <span>See Details</span></a>
+                      <a href="" data-toggle="modal" data-target="#extras-modal"><i class="glyphicon glyphicon-star"></i> <span>Add Extras</span></a>
+                    </div>
+                    <span>Included</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="panel">
+              <a class="options-trigger collapsed" data-toggle="collapse" data-parent="#options" href="#collapseThree">Collapsible Group Item #3</a>
+              <div id="collapseThree" class="panel-collapse collapse">
+                <ul class="list-unstyled" check-item>
+                  <li>
+                    <div class="styled-input">
+                      <input type="checkbox" id="addon-1" name="addon-1">
+                      <label for="addon-1"></label>
+                    </div>
+                    <img src="public/images/option.jpg" alt="">
+                    <div class="option-info">
+                      <span>Buffet</span>
+                      <a href="" data-toggle="modal" data-target="#details-modal"><i class="glyphicon glyphicon-eye-open"></i> <span>See Details</span></a>
+                      <a href="" data-toggle="modal" data-target="#extras-modal"><i class="glyphicon glyphicon-star"></i> <span>Add Extras</span></a>
+                    </div>
+                    <span>Included</span>
+                  </li>
+                  <li>
+                    <div class="styled-input">
+                      <input type="checkbox" id="addon-2" name="addon-2">
+                      <label for="addon-2"></label>
+                    </div>
+                    <img src="public/images/option.jpg" alt="">
+                    <div class="option-info">
+                      <span>Buffet</span>
+                      <a href="" data-toggle="modal" data-target="#details-modal"><i class="glyphicon glyphicon-eye-open"></i> <span>See Details</span></a>
+                      <a href="" data-toggle="modal" data-target="#extras-modal"><i class="glyphicon glyphicon-star"></i> <span>Add Extras</span></a>
+                    </div>
+                    <span>Included</span>
+                  </li>
+                  <li>
+                    <div class="styled-input">
+                      <input type="checkbox" id="addon-3" name="addon">
+                      <label for="addon-3"></label>
+                    </div>
+                    <img src="public/images/option.jpg" alt="">
+                    <div class="option-info">
+                      <span>Buffet</span>
+                      <a href="" data-toggle="modal" data-target="#details-modal"><i class="glyphicon glyphicon-eye-open"></i> <span>See Details</span></a>
+                      <a href="" data-toggle="modal" data-target="#extras-modal"><i class="glyphicon glyphicon-star"></i> <span>Add Extras</span></a>
+                    </div>
+                    <span>Included</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <div id="steps-sidebar">
+            <div>
+              <h5>Summary</h5>
+            </div>
+            <div>
+              <h6>Venue Details</h6>
+              <ul class="list-unstyled">
+                <li>Central Lounge <span>$2,584</span></li>
+                <li>Sapphire Room</li>
+                <li>50 People</li>
+                <li>Dec 26th, 2014</li>
+                <li>8:00pm - 3am (7 hrs)</li>
+              </ul>
+            </div>
+            <div>
+              <h6>Food</h6>
+              <ul class="list-unstyled">
+                <li>Premium Buffet <span>$750</span></li>
+              </ul>
+            </div>
+            <div>
+              <h6>Drinks</h6>
+              <ul class="list-unstyled">
+                <li>Cash Bar <span>Included</span></li>
+              </ul>
+            </div>
+            <div>
+              <h6>Add Ons</h6>
+              <ul class="list-unstyled">
+                <li>Vianese Table <span>$900</span></li>
+              </ul>
+            </div>
+            <div>
+              <div class="total">
+                <span>TOTAL</span>
+                <span>$4,234</span>
+              </div>
+              <a href="" onclick="location.href='checkout.html'" class="eg-btn eg-btn-2"><span class="hide-s hide-xs">process to </span>checkout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer" class="darker">
+    <div class="container rainbow-smaller">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div id="footer-top">
+            <div class="footer-top_text">
+              <h1 class="logo"><a href="index.html">EventsGlue</a></h1>
+              <p>Events Glu lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere eu dui sodales ullamcorper. Suspendisse potenti. Aliquam dictum viverra felis hendrerit efficitur</p>
+            </div>
+            <div class="footer-top_link hide-xs">
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About Party Up</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About Party Up</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About Party Up</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+              <div>
+                <h6>Company</h6>
+                <ul class="list-unstyled">
+                  <li><a href="">About Party Up</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">Blog</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Investors Relations</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="footer-bottom">
+            <div class="footer-bottom_subscribe">
+              <h4>Get the Latest news &amp; production updates</h4>
+              <div>
+                <input type="text" placeholder="Enter you email address">
+                <button class="eg-btn eg-btn-1">Subscribe</button>
+              </div>
+            </div>
+            <div class="footer-bottom_social hide-xs">
+              <h4>we are social</h4>
+              <ul class="list-unstyled social">
+                <li><a href="">Facebook</a></li>
+                <li><a href="">Twitter</a></li>
+                <li><a href="">Vimeo</a></li>
+                <li><a href="">Youtube</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="footer-info">
+            <p>&copy; 2014 Event Glu, Inc. All Rights Reserved.</p>
+            <ul class="list-unstyled">
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="details-modal" class="extras-details-modal dt-modal modal fade" tabindex="-1" role="dialog" reset-tab>
+    <div class="modal-dialog">
+      <header>
+        <button type="button" class="close-modal" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      </header>
+      <div class="extras-modal_container">
+        <h3>PREMIUM BUFFET</h3>
+        <div class="extras-modal_container__info">
+          <ul class="details-extras-tabs list-unstyled" role="tablist">
+            <li class="active"><a href="#details-details" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-eye-open"></i> Details</a></li>
+            <li><a href="#details-extras" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-star"></i> Extras</a></li>
+          </ul>
+          <div class="tab-content extras-modal_container__info___content">
+            <div class="tab-pane active" id="details-details">
+              <p>Details content</p>
+            </div>
+            <div class="tab-pane" id="details-extras">
+              <ul class="list-unstyled">
+                <li>
+                  <div class="styled-input">
+                    <input type="checkbox" id="extras-6" name="extras-6">
+                    <label for="extras-6"></label>
+                  </div>
+                  Zucchini with sesame &amp; chilli
+                  <span>+ 8 pp</span>
+                </li>
+                <li>
+                  <div class="styled-input">
+                    <input type="checkbox" id="extras-7" name="extras-7">
+                    <label for="extras-7"></label>
+                  </div>
+                  Zucchini with sesame &amp; chilli
+                  <span>+ 8 pp</span>
+                </li>
+                <li>
+                  <div class="styled-input">
+                    <input type="checkbox" id="extras-8" name="extras-8">
+                    <label for="extras-8"></label>
+                  </div>
+                  Zucchini with sesame &amp; chilli
+                  <span>+ 8 pp</span>
+                </li>
+                <li>
+                  <div class="styled-input">
+                    <input type="checkbox" id="extras-9" name="extras-9">
+                    <label for="extras-9"></label>
+                  </div>
+                  Zucchini with sesame &amp; chilli
+                  <span>+ 8 pp</span>
+                </li>
+                <li>
+                  <div class="styled-input">
+                    <input type="checkbox" id="extras-10" name="extras-10">
+                    <label for="extras-10"></label>
+                  </div>
+                  Zucchini with sesame &amp; chilli
+                  <span>+ 8 pp</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <a href="" class="eg-btn eg-btn-2">Add extras</a>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <div id="extras-modal" class="extras-details-modal ex-modal modal fade" tabindex="-1" role="dialog" reset-tab>
+    <div class="modal-dialog">
+      <header>
+        <button type="button" class="close-modal" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      </header>
+      <div class="extras-modal_container">
+        <h3>PREMIUM BUFFET</h3>
+        <div class="extras-modal_container__info">
+          <ul class="details-extras-tabs list-unstyled" role="tablist">
+            <li><a href="#extras-details" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-eye-open"></i> Details</a></li>
+            <li class="active"><a href="#extras-extras" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-star"></i> Extras</a></li>
+          </ul>
+          <div class="tab-content extras-modal_container__info___content">
+            <div class="tab-pane" id="extras-details">
+              <p>Details content</p>
+            </div>
+            <div class="tab-pane active" id="extras-extras">
+              <ul class="list-unstyled">
+                <li>
+                  <div class="styled-input">
+                    <input type="checkbox" id="extras-6" name="extras-6">
+                    <label for="extras-6"></label>
+                  </div>
+                  Zucchini with sesame &amp; chilli
+                  <span>+ 8 pp</span>
+                </li>
+                <li>
+                  <div class="styled-input">
+                    <input type="checkbox" id="extras-7" name="extras-7">
+                    <label for="extras-7"></label>
+                  </div>
+                  Zucchini with sesame &amp; chilli
+                  <span>+ 8 pp</span>
+                </li>
+                <li>
+                  <div class="styled-input">
+                    <input type="checkbox" id="extras-8" name="extras-8">
+                    <label for="extras-8"></label>
+                  </div>
+                  Zucchini with sesame &amp; chilli
+                  <span>+ 8 pp</span>
+                </li>
+                <li>
+                  <div class="styled-input">
+                    <input type="checkbox" id="extras-9" name="extras-9">
+                    <label for="extras-9"></label>
+                  </div>
+                  Zucchini with sesame &amp; chilli
+                  <span>+ 8 pp</span>
+                </li>
+                <li>
+                  <div class="styled-input">
+                    <input type="checkbox" id="extras-10" name="extras-10">
+                    <label for="extras-10"></label>
+                  </div>
+                  Zucchini with sesame &amp; chilli
+                  <span>+ 8 pp</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <a href="" class="eg-btn eg-btn-2">Add extras</a>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <script src="public/js/main.js"></script>
+
+</body>
+</html>
